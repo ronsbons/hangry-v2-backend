@@ -3,6 +3,7 @@ const uri = 'mongodb+srv://ronsbons:40zpSlcvuNJbwK0p@ronni-post-wdi-ex4lk.azure.
 
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
+  // [] need to change db and collection names
   const collection = client.db('test').collection('devices');
   // perform actions on the collection object
   client.close();
