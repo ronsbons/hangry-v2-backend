@@ -26,7 +26,9 @@ app.use(function(req, res, next) {
 
 
 // test connection response to send to front end when it connects to backend
-app.get('/', (request, response) => response.send('hello, backend'));
+app.get('/', (request, response) => {
+  response.send('hello, backend')
+});
 
 
 app.listen(process.env.PORT || 3001, () =>
