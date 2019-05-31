@@ -13,3 +13,5 @@ client.connect(err => {
 // const mongoose = require('mongoose');
 
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ronsbons:40zpSlcvuNJbwK0p@ronni-post-wdi-ex4lk.azure.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+
+// store 'mongodb+srv://ronsbons:40zpSlcvuNJbwK0p@ronni-post-wdi-ex4lk.azure.mongodb.net/test?retryWrites=true&w=majority' as DATABASE_URL in .env file
