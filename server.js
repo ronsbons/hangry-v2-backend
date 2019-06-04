@@ -5,8 +5,11 @@ const bodyParser = require('body-parser');
 const db = require('./models');
 
 // require routes
+const ingredientRoutes = require('./routes/ingredients');
+const recipeRoutes = require('./routes/recipes');
 
 const app = express();
+
 
 app.use(bodyParser.urlencoded({ extended: false }) );
 app.use(bodyParser.json());
@@ -20,12 +23,26 @@ app.use(function(req, res, next) {
 });
 
 
+// app.use('/ingredients', ingredientRoutes);
+app.post('/ingredients', (req, res) => {
+  db.Ingredients.create({
+    name: req.body.name,
+  }, (error, newIngredient) => {
+    if (error) {
+      console.log(`create ingredient error ${error}`);
+    };
+    console.log(`new ingredient: ${newIngredient}`);
+    res.json(newIngredient);
+  });
+});
+
 // app.use routes
 app.get('/', (request, response) => {
   response.send(`getting all recipes`);
   console.log(`getting all recipes`);
   // db.Recipes.find({})
-})
+});
+
 
 
 // serve the 'public' folder in the frontend which has 'index.html', which index.js puts components into
